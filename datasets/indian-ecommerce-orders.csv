@@ -1,0 +1,6 @@
+order_id,customer_id,order_date,city,state,tier,category,product_name,units,unit_price_inr,gst_amount_inr,total_amount_inr,payment_method,order_status
+ORD-2026-1001,CUST-9821,2026-03-01,Bengaluru,Karnataka,Tier-1,Electronics,Wireless Noise Cancelling Earbuds,1,2499.00,449.82,2948.82,UPI,Delivered
+ORD-2026-1002,CUST-4112,2026-03-01,Jaipur,Rajasthan,Tier-2,Fashion,Handcrafted Cotton Kurta Set,2,899.00,323.64,2121.64,COD,Delivered
+ORD-2026-1003,CUST-7740,2026-03-02,Mumbai,Maharashtra,Tier-1,Home & Kitchen,Stainless Steel Induction Cookware 3pc,1,1799.00,323.82,2122.82,Credit Card,Delivered
+ORD-2026-1004,CUST-2931,2026-03-02,Indore,Madhya Pradesh,Tier-2,Beauty & Grooming,Organic Vitamin C Radiance Serum,3,449.00,242.46,1589.46,UPI,Returned
+ORD-2026-1005,CUST-6508,2026-03-03,Delhi NCR,Delhi,Tier-1,Electronics,Fast Charger Power Adapter 65W GaN,1,1299.00,233.82,1532.82,UPI,Delivered

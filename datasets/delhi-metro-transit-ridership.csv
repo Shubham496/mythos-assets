@@ -1,0 +1,5 @@
+record_id,station_code,station_name,line_color,transit_date,time_slot,passenger_entries,passenger_exits,smart_card_percentage,fare_revenue_inr
+DMRC-2026-001,RC,Rajiv Chowk,Yellow & Blue Interchange,2026-03-01,09:00 - 10:00,14280,18450,87.40,984250.00
+DMRC-2026-002,KG,Kashmere Gate,Triple Interchange (Red/Yellow/Violet),2026-03-01,09:00 - 10:00,16920,15300,83.10,1124500.00
+DMRC-2026-003,NS18,Noida Sector 18,Blue Line,2026-03-01,18:00 - 19:00,11200,13950,89.20,782100.00
+DMRC-2026-004,HK,Hauz Khas,Yellow & Magenta Interchange,2026-03-01,18:00 - 19:00,12450,11800,91.50,845600.00

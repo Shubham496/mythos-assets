@@ -1,0 +1,765 @@
+---
+title: React.js
+subtitle: UI library
+category: JavaScript libraries
+tags: [Featured]
+updated: 2026-11-11
+tier: t1
+fragments:
+  - "<App />"
+  - "useState"
+  - "useEffect"
+  - "useReducer"
+  - "useMemo"
+  - "props"
+  - "onClick"
+  - "items.map"
+  - "createRoot"
+  - "<StrictMode>"
+  - "useRef"
+  - "useContext"
+  - "useCallback"
+  - "Suspense"
+weight: -10
+keywords:
+  - useState
+  - useEffect
+  - useRef
+  - useContext
+  - hooks
+  - function components
+  - JSX
+  - props/state
+  - createRoot
+intro: |
+  [React](https://react.dev/) is a JavaScript library for building user interfaces. This guide targets React 19 (19.0–19.3, function components and hooks).
+links:
+  - title: Installation
+    url: https://react.dev/learn/installation
+---
+
+{%raw%}
+
+## Quick start
+
+<!-- {: .-two-column} -->
+
+### Installing React
+
+```sh
+npm install react react-dom
+```
+
+TypeScript projects also need `@types/react` and `@types/react-dom`.
+
+See: [Installation](https://react.dev/learn/installation)
+
+### Create a root
+
+```jsx
+import { createRoot } from 'react-dom/client'
+createRoot(document.getElementById('root')).render(<App />)
+```
+
+The automatic JSX runtime (v17+) means no `import React`. See: [createRoot](https://react.dev/reference/react-dom/client/createRoot)
+
+### StrictMode
+
+```jsx
+<StrictMode><App /></StrictMode>
+```
+
+Re-runs renders, effects and ref callbacks an extra time in development to surface impure logic; no effect in production. See: [StrictMode](https://react.dev/reference/react/StrictMode)
+
+## Components
+
+<!-- {: .-three-column} -->
+
+### Function components
+
+<!-- {: .-prime} -->
+
+```jsx
+function Hello({ name }) {
+  return (
+    <h1 className="greeting">
+      Hello {name}
+    </h1>
+  )
+}
+```
+
+<!-- {: data-line="3,4,5"} -->
+
+Capitalised functions that return JSX. See: [Your first component](https://react.dev/learn/your-first-component)
+
+### JSX and conditionals
+
+```jsx
+<label htmlFor="name">Name</label>
+<p style={{ color: 'red' }}>{2 + 2}</p>
+<>
+  {isLoggedIn ? (
+    <AdminPanel />
+  ) : (
+    <LoginButton />
+  )}
+  {unread > 0 && (
+    <Badge count={unread} />
+  )}
+</>
+```
+
+<!-- {: data-line="4,5,6,7,8"} -->
+
+`{}` embeds expressions, attributes are camelCase and `<>…</>` is a fragment; `null` and booleans render nothing. See: [Writing markup with JSX](https://react.dev/learn/writing-markup-with-jsx)
+
+### Props
+
+```jsx
+function Avatar({ src, alt, size = 64 }) {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      width={size}
+      height={size}
+    />
+  )
+}
+<Avatar
+  src="/me.png"
+  alt="Me"
+  size={128}
+/>
+```
+
+<!-- {: data-line="1"} -->
+
+Defaults come from parameters (v19 dropped function defaultProps; classes keep theirs); spread extras with `{...props}`. See: [Passing props](https://react.dev/learn/passing-props-to-a-component)
+
+### Lists and keys
+
+```jsx
+{items.map(item => (
+  <li key={item.id}>{item.name}</li>
+))}
+```
+
+Keys must be stable and unique among siblings. See: [Rendering lists](https://react.dev/learn/rendering-lists)
+
+### Events
+
+```jsx
+<button onClick={handleClick}>
+  Save
+</button>
+<button onClick={() => remove(id)}>
+  Delete
+</button>
+<form
+  onSubmit={e => {
+    e.preventDefault()
+    save()
+  }}
+>
+  …
+</form>
+```
+
+<!-- {: data-line="4,9"} -->
+
+Pass the handler, not a call, and wrap arguments in an arrow; call `e.preventDefault()` to stop browser defaults. See: [Responding to events](https://react.dev/learn/responding-to-events)
+
+## State
+
+<!-- {: .-two-column} -->
+
+### useState
+
+```jsx
+const [count, setCount] = useState(0)
+setCount(count + 1)
+setCount(c => c + 1)  // when the next value depends on the previous
+```
+
+```jsx
+setUser({ ...user, name: 'Ana' })
+setItems(items => [...items, item])
+setItems(items => items.filter(i => i.id !== id))
+```
+
+State is a per-render snapshot and is immutable — replace it, never mutate in place. See: [useState](https://react.dev/reference/react/useState)
+
+### Controlled inputs
+
+```jsx
+const [name, setName] = useState('')
+<input value={name} onChange={e => setName(e.target.value)} />
+```
+
+React owns the value, so the input always reflects state. See: [input](https://react.dev/reference/react-dom/components/input)
+
+### Lifting state up
+
+```jsx
+function Parent() {
+  const [query, setQuery] = useState('')
+  return <Search value={query} onChange={setQuery} />
+}
+```
+
+Move shared state to the closest common parent and pass value + setter down. See: [Sharing state](https://react.dev/learn/sharing-state-between-components)
+
+### useReducer
+
+```jsx
+function reducer(state, action) {
+  if (action.type === 'increment') {
+    return { count: state.count + 1 }
+  }
+  return state
+}
+const [state, dispatch] = useReducer(reducer, { count: 0 })
+dispatch({ type: 'increment' })
+```
+
+<!-- {: data-line="7"} -->
+
+Prefer a reducer when updates are complex or depend on several values. See: [useReducer](https://react.dev/reference/react/useReducer)
+
+### Actions (v19)
+
+```jsx
+const [error, submitAction, isPending] =
+  useActionState(async (prev, formData) => {
+    return (await updateName(formData.get('name'))) ?? null
+  }, null)
+<form action={submitAction}>
+  <input name="name" />
+  <button disabled={isPending}>Update</button>
+  {error && <p>{error}</p>}
+</form>
+```
+
+<!-- {: data-line="1,2,3,4"} -->
+
+An action prop takes a function (sync or async) that React runs in a Transition; `useOptimistic` shows an optimistic result. See: [useActionState](https://react.dev/reference/react/useActionState)
+
+```jsx
+import { useFormStatus } from 'react-dom'
+
+function Submit() {
+  const { pending } = useFormStatus()
+  return <button disabled={pending}>Save</button>
+}
+```
+<!-- {: data-line="4"} -->
+
+`useFormStatus` reads the parent form's state; render it inside the `<form>`. See: [useFormStatus](https://react.dev/reference/react-dom/hooks/useFormStatus)
+
+### useOptimistic (v19)
+
+```jsx
+const [optimistic, addOptimistic] = useOptimistic(
+  todos,
+  (state, text) => [...state, { text, sending: true }]
+)
+
+async function addTodo(formData) {
+  addOptimistic(formData.get('text'))
+  await saveTodo(formData)
+}
+```
+<!-- {: data-line="1,2,3"} -->
+
+Shows the next state immediately while an action runs, then reconciles with the server result. Call the setter inside an action or transition. See: [useOptimistic](https://react.dev/reference/react/useOptimistic)
+
+## Effects
+
+<!-- {: .-two-column} -->
+
+### useEffect
+
+```jsx
+useEffect(() => {
+  const connection = createConnection(roomId)
+  connection.connect()
+  return () => connection.disconnect()  // cleanup
+}, [roomId])  // re-runs when roomId changes
+```
+
+<!-- {: data-line="4"} -->
+
+```jsx
+useEffect(() => {
+  const id = setInterval(tick, 1000)
+  return () => clearInterval(id)
+}, [])  // once on mount; twice in StrictMode dev
+```
+
+Synchronises a component with an external system and cleans up timers, subscriptions and listeners. See: [useEffect](https://react.dev/reference/react/useEffect)
+
+### Fetching data
+
+```jsx
+useEffect(() => {
+  const controller = new AbortController()
+  fetch(`/api/users/${id}`, { signal: controller.signal })
+    .then(r => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`)
+      return r.json()
+    })
+    .then(setUser)
+    .catch(err => { if (err.name !== 'AbortError') setError(err) })
+  return () => controller.abort()
+}, [id])
+```
+
+<!-- {: data-line="10"} -->
+
+Abort in the cleanup to drop stale responses, ignoring the expected `AbortError`. See: [Fetching data](https://react.dev/reference/react/useEffect#fetching-data-with-effects)
+
+### useEffectEvent (v19.2+)
+
+```jsx
+const onConnected = useEffectEvent(() => {
+  showNotification('Connected!', theme)
+})
+useEffect(() => {
+  const connection = createConnection(roomId)
+  connection.on('connected', onConnected)
+  connection.connect()
+  return () => connection.disconnect()
+}, [roomId])
+```
+
+<!-- {: data-line="1,2,3"} -->
+
+Reads the latest props and state without re-running the effect, so it stays out of the deps. See: [useEffectEvent](https://react.dev/reference/react/useEffectEvent)
+
+### You might not need an effect
+
+```jsx
+// prefer: derive during render
+const fullName = first + ' ' + last
+
+// avoid: derived state in an effect
+useEffect(() => {
+  setFullName(first + ' ' + last)
+})
+```
+
+<!-- {: data-line="5,6,7"} -->
+
+Don't use effects to transform data or to react to events. See: [You might not need an effect](https://react.dev/learn/you-might-not-need-an-effect)
+
+## Concurrent UI
+<!-- {: .-two-column} -->
+
+### Activity (v19.2)
+
+```jsx
+import { Activity } from 'react'
+<Activity mode={isOpen ? 'visible' : 'hidden'}>
+  <Sidebar />
+</Activity>
+```
+
+Hides children with `display: none`, unmounts effects, and keeps their state and DOM. See: [Activity](https://react.dev/reference/react/Activity)
+
+### View transitions (v19.3)
+
+```jsx
+import { ViewTransition } from 'react'
+<ViewTransition enter="auto" exit="auto">
+  <Page />
+</ViewTransition>
+```
+
+Animates enter, exit, update and share for transitions and Suspense reveals. See: [ViewTransition](https://react.dev/reference/react/ViewTransition) · [addTransitionType](https://react.dev/reference/react/addTransitionType)
+
+## Refs
+
+<!-- {: .-two-column} -->
+
+### useRef
+
+```jsx
+const inputRef = useRef(null)
+useEffect(() => inputRef.current.focus(), [])
+return <input ref={inputRef} />
+```
+
+A mutable `.current` box that persists without re-rendering. See: [useRef](https://react.dev/reference/react/useRef)
+
+```jsx
+<input
+  ref={node => {
+    node.focus()
+    return () => node.blur()  // on detach (v19)
+  }}
+/>
+```
+<!-- {: data-line="4"} -->
+
+Ref callbacks may return a cleanup function, called when the node detaches. See: [ref callback](https://react.dev/reference/react-dom/components/common#ref-callback)
+
+### Ref as a prop (v19)
+
+```jsx
+function Input({ ref, ...props }) {
+  return <input ref={ref} {...props} />
+}
+```
+
+v19 passes `ref` as a normal prop; `forwardRef` still works but is legacy (docs plan to deprecate it). See: [forwardRef](https://react.dev/reference/react/forwardRef)
+
+```jsx
+import { Fragment } from 'react'
+<Fragment ref={ref}>{rows}</Fragment>
+```
+
+19.3 attaches refs to fragments, yielding a `FragmentInstance` with DOM-like methods. See: [Fragment](https://react.dev/reference/react/Fragment)
+
+### useImperativeHandle
+
+```jsx
+useImperativeHandle(ref, () => ({
+  play: () => videoRef.current.play()
+}), [])
+```
+
+Exposes a custom imperative API instead of the DOM node; rarely needed. See: [useImperativeHandle](https://react.dev/reference/react/useImperativeHandle)
+
+### Portals and inner HTML
+
+```jsx
+import { createPortal } from 'react-dom'
+createPortal(<Modal />, document.getElementById('modal-root'))
+```
+
+```jsx
+<div dangerouslySetInnerHTML={{ __html: trustedHtml }} />
+```
+
+A portal renders elsewhere in the DOM while keeping the React tree; `dangerouslySetInnerHTML` injects raw HTML, so never pass untrusted input. See: [createPortal](https://react.dev/reference/react-dom/createPortal)
+
+## Context
+
+<!-- {: .-two-column} -->
+
+### createContext and useContext
+
+```jsx
+const ThemeContext = createContext(null)
+<ThemeContext value="dark"><Toolbar /></ThemeContext>
+
+function Toolbar() {
+  const theme = useContext(ThemeContext)
+  return <button className={theme}>Hi</button>
+}
+```
+
+<!-- {: data-line="5"} -->
+
+```jsx
+<ThemeContext value="dark">…</ThemeContext>  // v19+
+<ThemeContext.Provider value="dark">…</ThemeContext.Provider>
+// ^ still works in v19; docs plan to deprecate
+```
+
+```jsx
+function useTheme() {
+  const value = useContext(ThemeContext)
+  if (value === null) throw new Error('useTheme needs a provider')
+  return value
+}
+```
+
+<!-- {: data-line="3"} -->
+
+Context passes data down without prop drilling and v19 renders `<Context>` itself as the provider; wrapping `useContext` names the value and fails loudly outside a provider. See: [useContext](https://react.dev/reference/react/useContext) · [createContext](https://react.dev/reference/react/createContext)
+
+## Custom hooks
+
+<!-- {: .-two-column} -->
+
+### Rules of hooks
+
+Call hooks at the top level of a component or hook — never in loops, conditions or nested functions.
+
+See: [Rules of hooks](https://react.dev/reference/rules/rules-of-hooks)
+
+### useOnlineStatus
+
+```jsx
+function useOnlineStatus() {
+  const [isOnline, setOnline] = useState(true)
+  useEffect(() => {
+    const update = () => setOnline(navigator.onLine)
+    update()
+    window.addEventListener('online', update)
+    window.addEventListener('offline', update)
+    return () => {
+      window.removeEventListener('online', update)
+      window.removeEventListener('offline', update)
+    }
+  }, [])
+  return isOnline
+}
+```
+
+<!-- {: data-line="8,9,10,11"} -->
+
+A custom hook is just a function that calls other hooks. See: [Custom hooks](https://react.dev/learn/reusing-logic-with-custom-hooks)
+
+### useId and useDebugValue
+
+```jsx
+const id = useId()
+<label htmlFor={id}>Name</label>
+<input id={id} />
+```
+
+`useId` gives SSR-safe ids for accessibility; `useDebugValue(label)` labels a hook in DevTools. See: [useId](https://react.dev/reference/react/useId)
+
+## Performance
+
+<!-- {: .-two-column} -->
+
+### memo, useMemo and useCallback
+
+```jsx
+const Row = memo(function Row({ item }) {
+  return <li>{item.name}</li>
+})
+const visible = useMemo(() => filter(items, query), [items, query])
+const onSelect = useCallback(id => setSelected(id), [])
+```
+
+<!-- {: data-line="1,4"} -->
+
+Cache components and values only when measurement shows a need — [React Compiler 1.0](https://react.dev/blog/2025/10/07/react-compiler-1) (stable since Oct 2025) auto-memoises, removing most manual calls. See: [memo](https://react.dev/reference/react/memo)
+
+### useTransition and useDeferredValue
+
+```jsx
+const [isPending, startTransition] = useTransition()
+startTransition(() => setQuery(input))
+```
+
+```jsx
+const deferredQuery = useDeferredValue(query)
+```
+
+`useTransition` marks an update non-blocking so urgent ones (typing) stay responsive; `useDeferredValue` renders a stale value first, then catches up. See: [useTransition](https://react.dev/reference/react/useTransition) · [useDeferredValue](https://react.dev/reference/react/useDeferredValue)
+
+### useSyncExternalStore
+
+```jsx
+const isOnline = useSyncExternalStore(
+  subscribe,
+  () => navigator.onLine,
+  () => true
+)
+```
+
+<!-- {: data-line="4"} -->
+
+Subscribes safely to an external store in concurrent rendering; the third argument is the server snapshot. See: [useSyncExternalStore](https://react.dev/reference/react/useSyncExternalStore)
+
+## Suspense and lazy
+
+<!-- {: .-two-column} -->
+
+### lazy and Suspense
+
+```jsx
+const Chart = lazy(() => import('./Chart'))
+<Suspense fallback={<Spinner />}><Chart /></Suspense>
+```
+
+Code-splits a component; the fallback shows while it loads. See: [Suspense](https://react.dev/reference/react/Suspense)
+
+### use(promise) (v19)
+
+```jsx
+function Comments({ commentsPromise }) {
+  const comments = use(commentsPromise)
+  return comments.map(c => <p key={c.id}>{c.text}</p>)
+}
+```
+
+Reads a promise (suspends) or a context (no suspend); unlike hooks it may be conditional. Promises must be cached. See: [use](https://react.dev/reference/react/use)
+
+## Rendering and SSR
+
+<!-- {: .-two-column} -->
+
+### Client rendering
+
+```jsx
+// fresh DOM
+createRoot(document.getElementById('root'))
+  .render(<App />)
+
+// server HTML
+hydrateRoot(
+  document.getElementById('root'),
+  <App />
+)
+```
+
+<!-- {: data-line="6,7,8,9"} -->
+
+Hydration markup must match the client render. See: [Client APIs](https://react.dev/reference/react-dom/client)
+
+### Server rendering
+
+```jsx
+import { renderToString } from 'react-dom/server'
+const html = renderToString(<App />)  // sync, no streaming
+```
+
+`renderToPipeableStream` (Node) and `renderToReadableStream` (web) stream with Suspense.
+
+```jsx
+import { prerender } from 'react-dom/static'
+const { prelude } = await prerender(<App />)
+```
+
+`prerender` and `prerenderToNodeStream` wait for data; 19.2 adds `resume` for partial pre-rendering.
+
+`cache(fn)` dedupes Server Component work; `cacheSignal()` returns an
+AbortSignal aborted when the render ends.
+
+See: [Server APIs](https://react.dev/reference/react-dom/server) · [prerender](https://react.dev/reference/react-dom/static/prerender)
+
+### Browser-only rendering (v19.3)
+
+```jsx
+import { use } from 'react'
+import { browser } from 'react-dom'
+use(browser())  // suspends on the server, not the client
+```
+
+Marks a Client Component as browser-only; its nearest Suspense fallback
+renders during SSR.
+
+See: [browser](https://react.dev/reference/react-dom/browser)
+
+### Metadata and resource hints
+
+```jsx
+import { preload, prefetchDNS } from 'react-dom'
+
+<title>Dashboard</title>
+<meta name="description" content="Stats" />
+<link rel="canonical" href="https://example.com" />
+
+preload('/font.woff2', { as: 'font' })
+prefetchDNS('https://cdn.example.com')
+```
+
+React hoists metadata tags to `<head>`; `preload`, `preinit`, `preconnect` and `prefetchDNS` emit resource hints.
+
+See: [preload](https://react.dev/reference/react-dom/preload) · [title](https://react.dev/reference/react-dom/components/title)
+
+## Error handling
+
+<!-- {: .-two-column} -->
+
+### Error boundaries
+
+```jsx
+class ErrorBoundary extends Component {
+  state = { error: null }
+
+  static getDerivedStateFromError(error) {
+    return { error }
+  }
+
+  componentDidCatch(error, info) {
+    logError(error, info)
+  }
+
+  render() {
+    if (this.state.error) {
+      return <h1>Something went wrong.</h1>
+    }
+    return this.props.children
+  }
+}
+```
+
+<!-- {: data-line="4,5,6"} -->
+
+Still the only built-in way to catch render errors, and still a class; [react-error-boundary](https://github.com/bvaughn/react-error-boundary) wraps it with a hooks-friendly API. See: [Error boundaries](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary)
+
+### Root error callbacks (v19)
+
+```jsx
+createRoot(node, {
+  onUncaughtError: (error, info) => log(error, info),
+  onCaughtError: (error, info) => log(error, info),
+  onRecoverableError: (error, info) => log(error, info)
+})
+```
+
+Root options report errors caught by boundaries, uncaught errors and recoverable errors.
+
+See: [createRoot](https://react.dev/reference/react-dom/client/createRoot#parameters)
+
+## Legacy APIs
+
+<!-- {: .-two-column} -->
+
+### Rendering and lifecycle
+
+| Legacy | Modern |
+| --- | --- |
+| `ReactDOM.render(el, node)` | `createRoot(node).render(el)` |
+| `ReactDOM.hydrate(el, node)` | `hydrateRoot(node, el)` |
+| `componentDidMount` / `componentDidUpdate` | `useEffect` |
+| `componentWillUnmount` | effect cleanup |
+| Class components | function components |
+
+See: [createRoot](https://react.dev/reference/react-dom/client/createRoot)
+
+### Components and props
+
+| Legacy | Modern |
+| --- | --- |
+| `defaultProps` (function components) | default parameter values |
+| `propTypes` | TypeScript |
+| `React.createElement` | JSX |
+
+See: [Component](https://react.dev/reference/react/Component)
+
+### Refs and context
+
+| Legacy | Modern |
+| --- | --- |
+| String refs `ref="input"` | ref callback or `useRef` |
+| `forwardRef` (v18) | `ref` as a prop (v19) |
+| Legacy context (`getChildContext`) | `createContext` |
+| `<Context.Provider value>` (still works) | `<Context value>` (v19+) |
+
+See: [forwardRef](https://react.dev/reference/react/forwardRef)
+
+### Further reading
+
+See: [Legacy APIs](https://react.dev/reference/react/legacy). Classes still work and are the only way to write an error boundary; see the [React v16 cheatsheet](react@16) for the class-era API.
+
+## Also see
+
+<!-- {: .-two-column} -->
+
+- [React documentation](https://react.dev/) _(react.dev)_
+- [React API reference](https://react.dev/reference/react) _(react.dev)_
+- [TypeScript cheatsheet](typescript) — typed props and hooks
+- [React v16 cheatsheet](react@16) — class components and legacy APIs
+- [React v0.14 cheatsheet](react@0.14) — `React.createClass` era
+
+{%endraw%}

@@ -1,0 +1,497 @@
+{
+  "sql": [
+    {
+      "file": "devhints-sql-join.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/sql-join.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 0.8,
+      "status": "cached"
+    },
+    {
+      "file": "devhints-mysql-basics.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/mysql.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 10.6,
+      "status": "cached"
+    },
+    {
+      "file": "devhints-postgresql-basics.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/postgresql.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 1.2,
+      "status": "cached"
+    },
+    {
+      "file": "dori-sql-cheatsheet.md",
+      "url": "https://raw.githubusercontent.com/dori-dev/sql-cheatsheet/master/README.md",
+      "source": "dori-dev/sql-cheatsheet (MIT)",
+      "size_kb": 9.0,
+      "status": "cached"
+    }
+  ],
+  "mysql": [
+    {
+      "file": "devhints-mysql.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/mysql.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 10.6,
+      "status": "cached"
+    },
+    {
+      "file": "awesome-mysql-commands.sh",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/databases/mysql.sh",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 6.4,
+      "status": "cached"
+    }
+  ],
+  "postgresql": [
+    {
+      "file": "devhints-postgresql.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/postgresql.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 1.2,
+      "status": "cached"
+    },
+    {
+      "file": "devhints-postgresql-jsonb.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/postgresql-json.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 3.3,
+      "status": "cached"
+    }
+  ],
+  "sqlite": [
+    {
+      "file": "sqlite-commands-reference.md",
+      "url": "https://raw.githubusercontent.com/dori-dev/sql-cheatsheet/master/README.md",
+      "source": "dori-dev/sql-cheatsheet (MIT)",
+      "size_kb": 9.0,
+      "status": "cached"
+    }
+  ],
+  "mongodb": [
+    {
+      "file": "awesome-mongodb.sh",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/databases/mongodb.sh",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 3.5,
+      "status": "cached"
+    }
+  ],
+  "redis": [
+    {
+      "file": "awesome-redis.sh",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/databases/redis.sh",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 8.7,
+      "status": "cached"
+    }
+  ],
+  "snowflake": [
+    {
+      "file": "data-engineering-snowflake-stack.md",
+      "url": "https://raw.githubusercontent.com/Majd2404/data-engineering-cheatsheet/main/README.md",
+      "source": "Majd2404/data-engineering-cheatsheet (MIT)",
+      "size_kb": 8.3,
+      "status": "cached"
+    }
+  ],
+  "python": [
+    {
+      "file": "comprehensive-python-cheatsheet.md",
+      "url": "https://raw.githubusercontent.com/gto76/python-cheatsheet/master/README.md",
+      "source": "gto76/python-cheatsheet (MIT)",
+      "size_kb": 146.7,
+      "status": "cached"
+    },
+    {
+      "file": "devhints-python.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/python.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 3.9,
+      "status": "cached"
+    },
+    {
+      "file": "awesome-python.md",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/languages/python.md",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 12.7,
+      "status": "cached"
+    }
+  ],
+  "javascript": [
+    {
+      "file": "modern-js-cheatsheet.md",
+      "url": "https://raw.githubusercontent.com/mbeaudru/modern-js-cheatsheet/master/README.md",
+      "source": "mbeaudru/modern-js-cheatsheet (MIT)",
+      "size_kb": 64.6,
+      "status": "cached"
+    },
+    {
+      "file": "devhints-javascript.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/javascript.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 6.3,
+      "status": "cached"
+    }
+  ],
+  "typescript": [
+    {
+      "file": "devhints-typescript.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/typescript.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 12.3,
+      "status": "cached"
+    },
+    {
+      "file": "awesome-typescript.md",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/languages/typescript.md",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 20.9,
+      "status": "cached"
+    }
+  ],
+  "java": [
+    {
+      "file": "awesome-java.md",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/languages/java.md",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 17.4,
+      "status": "cached"
+    }
+  ],
+  "cpp": [
+    {
+      "file": "modern-cpp-cheatsheet.md",
+      "url": "https://raw.githubusercontent.com/mortennobel/cpp-cheatsheet/master/README.md",
+      "source": "mortennobel/cpp-cheatsheet (MIT)",
+      "size_kb": 24.7,
+      "status": "cached"
+    }
+  ],
+  "c": [
+    {
+      "file": "awesome-c.md",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/languages/C.txt",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 8.6,
+      "status": "cached"
+    }
+  ],
+  "go": [
+    {
+      "file": "devhints-go.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/go.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 16.2,
+      "status": "cached"
+    },
+    {
+      "file": "awesome-golang.md",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/languages/golang.md",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 16.2,
+      "status": "cached"
+    }
+  ],
+  "rust": [
+    {
+      "file": "systems-programming-reference.md",
+      "url": "https://raw.githubusercontent.com/mortennobel/cpp-cheatsheet/master/README.md",
+      "source": "mortennobel/cpp-cheatsheet (MIT)",
+      "size_kb": 24.7,
+      "status": "cached"
+    }
+  ],
+  "csharp": [
+    {
+      "file": "devhints-csharp.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/csharp7.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 4.2,
+      "status": "cached"
+    },
+    {
+      "file": "awesome-csharp.md",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/languages/C%23.txt",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 16.2,
+      "status": "cached"
+    }
+  ],
+  "php": [
+    {
+      "file": "awesome-php.php",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/languages/php.php",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 15.3,
+      "status": "cached"
+    }
+  ],
+  "html-css": [
+    {
+      "file": "devhints-html.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/html.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 4.4,
+      "status": "cached"
+    },
+    {
+      "file": "devhints-css.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/css.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 8.4,
+      "status": "cached"
+    },
+    {
+      "file": "devhints-css-flexbox.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/css-flexbox.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 3.0,
+      "status": "cached"
+    },
+    {
+      "file": "devhints-css-grid.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/css-grid.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 7.5,
+      "status": "cached"
+    }
+  ],
+  "pandas": [
+    {
+      "file": "Pandas_Cheat_Sheet.pdf",
+      "url": "https://raw.githubusercontent.com/mcastrovacc/Cheatsheets-SQL-R-Python-Tableau/master/Pandas_Cheat_Sheet.pdf",
+      "source": "DataCamp / mcastrovacc (OER)",
+      "size_kb": 3949.6,
+      "status": "cached"
+    }
+  ],
+  "numpy": [
+    {
+      "file": "numpy-100-exercises-and-tricks.md",
+      "url": "https://raw.githubusercontent.com/rougier/numpy-100/master/README.md",
+      "source": "rougier/numpy-100 (MIT)",
+      "size_kb": 1.4,
+      "status": "cached"
+    },
+    {
+      "file": "Numpy_Cheat_Sheet.pdf",
+      "url": "https://raw.githubusercontent.com/mcastrovacc/Cheatsheets-SQL-R-Python-Tableau/master/Numpy_Cheat_Sheet.pdf",
+      "source": "DataCamp / mcastrovacc (OER)",
+      "size_kb": 4900.6,
+      "status": "cached"
+    }
+  ],
+  "bi": [
+    {
+      "file": "Business_Intelligence_Architecture.pdf",
+      "url": "https://raw.githubusercontent.com/ianjiteshan/PowerBI-CheatSheet/main/Notes/Business_Intelligence.pdf",
+      "source": "ianjiteshan/PowerBI (OER)",
+      "size_kb": 1878.4,
+      "status": "cached"
+    },
+    {
+      "file": "Data_Modeling_Star_Schemas.pdf",
+      "url": "https://raw.githubusercontent.com/ianjiteshan/PowerBI-CheatSheet/main/Notes/Data_Model.pdf",
+      "source": "ianjiteshan/PowerBI (OER)",
+      "size_kb": 1171.8,
+      "status": "cached"
+    }
+  ],
+  "powerbi": [
+    {
+      "file": "DAX_Formulas_and_Calculations.pdf",
+      "url": "https://raw.githubusercontent.com/ianjiteshan/PowerBI-CheatSheet/main/Notes/DAX.pdf",
+      "source": "ianjiteshan/PowerBI (OER)",
+      "size_kb": 2001.2,
+      "status": "cached"
+    },
+    {
+      "file": "Power_Query_ETL_Transformations.pdf",
+      "url": "https://raw.githubusercontent.com/ianjiteshan/PowerBI-CheatSheet/main/Notes/Data_Transformation.pdf",
+      "source": "ianjiteshan/PowerBI (OER)",
+      "size_kb": 2376.1,
+      "status": "cached"
+    }
+  ],
+  "tableau": [
+    {
+      "file": "Tableau_Visual_Analytics_CheatSheet.pdf",
+      "url": "https://raw.githubusercontent.com/mcastrovacc/Cheatsheets-SQL-R-Python-Tableau/master/Tableau%2BCheat%2BSheet.pdf",
+      "source": "Tableau / mcastrovacc (OER)",
+      "size_kb": 7074.1,
+      "status": "cached"
+    }
+  ],
+  "excel": [
+    {
+      "file": "excel-modern-formulas-cheatsheet.md",
+      "url": "https://raw.githubusercontent.com/AdarshVL/Excel-Formula-CheatSheets/main/README.md",
+      "source": "AdarshVL/Excel-Formula (MIT)",
+      "size_kb": 3.7,
+      "status": "cached"
+    }
+  ],
+  "fastapi": [
+    {
+      "file": "fastapi-comprehensive-cheatsheet.md",
+      "url": "https://raw.githubusercontent.com/vasu-devs/fastapi-cheatsheet/main/README.md",
+      "source": "vasu-devs/fastapi-cheatsheet (MIT)",
+      "size_kb": 5.4,
+      "status": "cached"
+    }
+  ],
+  "django": [
+    {
+      "file": "awesome-django.py",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/backend/django.py",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 7.3,
+      "status": "cached"
+    }
+  ],
+  "react": [
+    {
+      "file": "devhints-react.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/react.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 19.3,
+      "status": "cached"
+    },
+    {
+      "file": "devhints-react-router.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/react-router.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 2.3,
+      "status": "cached"
+    }
+  ],
+  "nodejs": [
+    {
+      "file": "devhints-nodejs.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/nodejs.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 1.1,
+      "status": "cached"
+    },
+    {
+      "file": "devhints-nodejs-streams.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/nodejs-stream.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 2.5,
+      "status": "cached"
+    }
+  ],
+  "git": [
+    {
+      "file": "devhints-git-branch.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/git-branch.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 1.8,
+      "status": "cached"
+    },
+    {
+      "file": "devhints-git-tricks.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/git-tricks.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 2.9,
+      "status": "cached"
+    },
+    {
+      "file": "awesome-git.sh",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/tools/git.sh",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 9.4,
+      "status": "cached"
+    }
+  ],
+  "docker": [
+    {
+      "file": "devhints-docker.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/docker.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 7.4,
+      "status": "cached"
+    },
+    {
+      "file": "devhints-docker-compose.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/docker-compose.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 9.7,
+      "status": "cached"
+    },
+    {
+      "file": "awesome-docker.sh",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/tools/docker.sh",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 6.2,
+      "status": "cached"
+    }
+  ],
+  "kubernetes": [
+    {
+      "file": "awesome-kubernetes.md",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/tools/kubernetes.md",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 3.2,
+      "status": "cached"
+    }
+  ],
+  "linux": [
+    {
+      "file": "devhints-linux.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/linux.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 1.2,
+      "status": "cached"
+    },
+    {
+      "file": "devhints-bash.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/bash.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 27.7,
+      "status": "cached"
+    },
+    {
+      "file": "awesome-ubuntu.sh",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/tools/ubuntu.sh",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 1.1,
+      "status": "cached"
+    }
+  ],
+  "aws": [
+    {
+      "file": "devhints-awscli.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/awscli.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 1.3,
+      "status": "cached"
+    },
+    {
+      "file": "devhints-aws-s3.md",
+      "url": "https://raw.githubusercontent.com/rstacruz/cheatsheets/master/aws-s3.md",
+      "source": "rstacruz/cheatsheets (MIT)",
+      "size_kb": 8.8,
+      "status": "cached"
+    },
+    {
+      "file": "awesome-aws.sh",
+      "url": "https://raw.githubusercontent.com/LeCoupa/awesome-cheatsheets/master/tools/aws.sh",
+      "source": "LeCoupa/awesome-cheatsheets (MIT)",
+      "size_kb": 2.5,
+      "status": "cached"
+    }
+  ],
+  "digital-marketing": [
+    {
+      "file": "seo-technical-audit-cheatsheet.md",
+      "url": "https://raw.githubusercontent.com/ryanlfoster/SEO-Cheatsheet/master/README.md",
+      "source": "ryanlfoster/SEO-Cheatsheet (MIT)",
+      "size_kb": 0.1,
+      "status": "cached"
+    }
+  ]
+}
